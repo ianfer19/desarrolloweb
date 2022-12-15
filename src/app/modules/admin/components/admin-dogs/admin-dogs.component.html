@@ -1,0 +1,40 @@
+<div class="fondo">
+    <nav id="NavBar" class="navbar navbar-expand bf-primary" style="background-color: #fff159">
+      <div class="container-fluid">
+          <a class="navbar-brand"ref="#">FootPrints</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active"  aria-current="page" href="http://localhost:4200/admin">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://localhost:4200/admin/carrito">Carrito</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input type="search" (ngModelChange)="searchPerros(key.value)"  #key="ngModel" ngModel name="key" id="searchName" class="form-control mr-sm-2" placeholder="Buscar perros..." required>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+  <div  class="container-languagues-box">
+          <div *ngFor="let perro of perros" class="container-languagues">
+              <img class="image-languagues"src="{{perro?.imagen}}" />
+                <p class="name-languagues" >{{perro?.nombre}}</p>
+                <div class="skills-langua">
+                  <p  class= "skills-languagues">Altura: {{perro?.altura}} cm</p>
+                  <p class= "skills-languagues">Peso: {{perro?.peso}} kg</p>
+                  <p class= "skills-languagues">Edad: {{perro?.edad}} años</p>
+                  <p class= "skills-languagues">Color: {{perro?.color}}</p>
+
+                </div>
+          </div>
+      </div>
+  <app-footer id="footer"></app-footer>
+
+  </div>
+
